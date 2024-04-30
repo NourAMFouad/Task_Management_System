@@ -1,5 +1,4 @@
 // To save status values 
-[Serializable]
 enum Taskstatus
 {
     Pending, InProgress, Completed
@@ -8,7 +7,7 @@ enum Taskstatus
 
 
 // include all info related with task details 
-[Serializable]
+
 class Task{
     public string Description { get; set; } 
     public Taskstatus Status { get; set; }
@@ -25,6 +24,5 @@ class Task{
         Status = status;
     } 
 
-    // setter and getter 
     
 }
