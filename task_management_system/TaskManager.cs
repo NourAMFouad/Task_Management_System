@@ -3,7 +3,7 @@ using System;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Xml.Serialization;
+//using System.Xml.Serialization;
 
 public delegate void SuccessfullyEventHandler();
 
@@ -136,16 +136,16 @@ public void DeleteTask(string desc)
 
 // to export tasks in data in pdf file 
 // 1 export tasks list to write it in xml file 
-public void ExportTasksToXml (string filePath){
-    // create filestream to write xml file
-    using (FileStream filestream = new FileStream(filePath, FileMode.Create)){
-        // create xmlSerializer for List tasks type
-        XmlSerializer serializer = new XmlSerializer(typeof(List<Task>));
+// public void ExportTasksToXml (string filePath){
+//     // create filestream to write xml file
+//     using (FileStream filestream = new FileStream(filePath, FileMode.Create)){
+//         // create xmlSerializer for List tasks type
+//         XmlSerializer serializer = new XmlSerializer(typeof(List<Task>));
     
-        // Serialize the list of tasks and write it to file
-        serializer.Serialize(filestream, tasks);
-    }
-}
+//         // Serialize the list of tasks and write it to file
+//         serializer.Serialize(filestream, tasks);
+//     }
+// }
 
 
 
