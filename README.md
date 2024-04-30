@@ -1,5 +1,5 @@
 # Task Management System 
-## Feature:
+## Features:
 Allow users to select any choice from list will display when start the program:
 
 1- Able to view a list of tasks, so that he/she can see what needs to be done.
