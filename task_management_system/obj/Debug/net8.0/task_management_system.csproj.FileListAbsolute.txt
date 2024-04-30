@@ -12,3 +12,4 @@ E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\r
 E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\task_management_system.pdb
 E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\task_management_system.genruntimeconfig.cache
 E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\ref\task_management_system.dll
+E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\task_management_system.sourcelink.json

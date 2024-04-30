@@ -18,7 +18,6 @@ public delegate string Inputhandler();
         }
         
         // function to allow user add description 
-        
         public string AddDescription(){
 
             description = Console.ReadLine();
@@ -51,7 +50,7 @@ public delegate string Inputhandler();
                     // start to allow user enter number to select choice
                     Console.WriteLine("Enter your choice from list:");
                     int choice_number = Convert.ToUInt16(Console.ReadLine());   // to select numbers from range 0 to 2^16
-                
+                    string? filename;
 
                     switch (choice_number){
                         case 1:
@@ -82,9 +81,10 @@ public delegate string Inputhandler();
                             break;
 
                         case 5:
-                        // Export Tasks to file 
-                        // taskmanager.ExportTasksToXml("tasks.xml");
-                        // Console.WriteLine("File created succesfully.");
+                        // save tasks in txt file 
+                        Console.WriteLine("Enter file name with .txt extension: ");
+                        filename = Console.ReadLine(); 
+                        taskmanager.SaveDataInFile(filename);
                             break;
                     }
                 }

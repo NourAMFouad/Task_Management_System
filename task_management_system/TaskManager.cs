@@ -4,6 +4,8 @@ using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 //using System.Xml.Serialization;
+// to make us able to working with files 
+using System.IO;
 
 public delegate void SuccessfullyEventHandler();
 
@@ -94,16 +96,16 @@ public delegate void SuccessfullyEventHandler();
                         Console.WriteLine("Try Again.\n");
                     }
             }        
-               // when task not in list
-                if (found == false){
-                   Console.WriteLine("please try agian, task not in list.\n");
-                }else if (found == true){
-                   Console.WriteLine("Done\n");
-                }
             
 
-        }            
-
+         }            
+            // when task not in list
+            if (found == false){
+                   Console.WriteLine("please try agian, task not in list.\n");
+            }else if (found == true){
+                   Console.WriteLine("Done\n");
+            }
+            
         }
        
 
@@ -132,22 +134,29 @@ public void DeleteTask(string desc)
 
 }
 
-
-
-// to export tasks in data in pdf file 
-// 1 export tasks list to write it in xml file 
-// public void ExportTasksToXml (string filePath){
-//     // create filestream to write xml file
-//     using (FileStream filestream = new FileStream(filePath, FileMode.Create)){
-//         // create xmlSerializer for List tasks type
-//         XmlSerializer serializer = new XmlSerializer(typeof(List<Task>));
+// save data from list in txt file 
+public void SaveDataInFile(string filename){
+    // boollean variable to save value true if all data from list saved successfully
+    // and by default is false untill adding values in file. 
+    bool flag = false;
     
-//         // Serialize the list of tasks and write it to file
-//         serializer.Serialize(filestream, tasks);
-//     }
-// }
+    // open a file stream for writting
+ using (StreamWriter Writer = new StreamWriter(filename)){
+    
+    // write all values from list in file 
+    foreach (var task in tasks){
+        Writer.WriteLine($"- {task.Description} : {task.Status}");
+        flag = true; 
+    }
 
+    if (flag){
+        Console.WriteLine("Data Saved successfully");
+    }else{
+        Console.WriteLine("Try agian, something is wrong");
+    }
+ }
 
+}
 
     }   // end of TaskManager class
 

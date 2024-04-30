@@ -9,8 +9,12 @@ enum Taskstatus
 // include all info related with task details 
 
 class Task{
+    // Task fields and properties 
+    // automatic properties 
     public string Description { get; set; } 
     public Taskstatus Status { get; set; }
+
+ 
 
     // constructor with zero args
     // why it required for serialization 
@@ -23,6 +27,8 @@ class Task{
         Description = description;
         Status = status;
     } 
+
+
 
     
 }
