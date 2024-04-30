@@ -10,4 +10,6 @@ Allow users to select any choice from list will display when start the program:
 
 4- Able to delete a task, so that he/she can remove tasks that are no longer relevant.
 
+5- Able to save all tasks in txt file, display all tasks with (description and statu).
+
 When need to exit from app press Esc button.
