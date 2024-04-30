@@ -1,0 +1,14 @@
+E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\task_management_system.GeneratedMSBuildEditorConfig.editorconfig
+E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\task_management_system.AssemblyInfoInputs.cache
+E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\task_management_system.AssemblyInfo.cs
+E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\task_management_system.csproj.CoreCompileInputs.cache
+E:\C#_projects\task_management_project\task_management_system\bin\Debug\net8.0\task_management_system.exe
+E:\C#_projects\task_management_project\task_management_system\bin\Debug\net8.0\task_management_system.deps.json
+E:\C#_projects\task_management_project\task_management_system\bin\Debug\net8.0\task_management_system.runtimeconfig.json
+E:\C#_projects\task_management_project\task_management_system\bin\Debug\net8.0\task_management_system.dll
+E:\C#_projects\task_management_project\task_management_system\bin\Debug\net8.0\task_management_system.pdb
+E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\task_management_system.dll
+E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\refint\task_management_system.dll
+E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\task_management_system.pdb
+E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\task_management_system.genruntimeconfig.cache
+E:\C#_projects\task_management_project\task_management_system\obj\Debug\net8.0\ref\task_management_system.dll

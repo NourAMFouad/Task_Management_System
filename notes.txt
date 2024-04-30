@@ -1,0 +1,52 @@
+Why need to 
+
+
+Using private for List:
+The private access modifier for the tasks list means that it can only be accessed within the TaskManager class. This encapsulation helps maintain the integrity of the class by preventing external code from directly modifying the list of tasks without going through the appropriate methods.
+
+public TaskManager:
+public TaskManager is a constructor for the TaskManager class. Constructors are typically made public so that they can be accessed from outside the class, allowing objects of that class to be instantiated.
+
+Initializing tasks with new List<Task>():
+This line initializes the tasks list when a TaskManager object is created. Without this initialization, attempting to add tasks to the tasks list would result in a NullReferenceException. By initializing it with an empty list, we ensure that the tasks list is ready to accept tasks as soon as a TaskManager object is created.
+
+Using foreach instead of for or while loop:
+The foreach loop is often preferred when iterating over collections like lists, arrays, etc., because it simplifies the syntax and makes the code more readable. It automatically iterates over each element in the collection without needing to manage an index or conditionally check for the end of the collection, which is necessary with a for or while loop.
+
+
+** Focus on to create instance out side any loop 
+The difference between these two code snippets lies mainly in the placement of the `TaskManager` instantiation:
+
+In the first code snippet:
+```csharp
+static void Menu(bool start){
+    TaskManager taskmanager = new TaskManager();
+    while (Console.ReadKey(true).Key != ConsoleKey.Escape)
+    {           
+        if (start){
+            // Menu logic
+        }
+    }
+}
+```
+
+Here, the `TaskManager` instance (`taskmanager`) is created at the beginning of the `Menu` method. This means that each time the `Menu` method is called, a new instance of `TaskManager` is created.
+
+In the second code snippet:
+```csharp
+class Program{
+    static void Menu(bool start){
+        while (Console.ReadKey(true).Key != ConsoleKey.Escape)
+        {           
+            if (start){
+                TaskManager taskmanager = new TaskManager(); // Instantiated here
+                // Menu logic
+            }
+        }
+    }
+}
+```
+
+In this version, the `TaskManager` instance (`taskmanager`) is created inside the `if (start)` block. This means that the `TaskManager` instance is created only when the `start` parameter is `true` and within the scope of that block.
+
+So, the difference is essentially in the scope and lifetime of the `TaskManager` instance. In the first snippet, a new instance is created each time the `Menu` method is called. In the second snippet, it's created only when `start` is `true` and within the block where it's needed.

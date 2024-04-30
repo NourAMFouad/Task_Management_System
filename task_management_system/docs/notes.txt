@@ -1,0 +1,8 @@
+why we need to add instance and add events out side loop ?
+adding event subscriptions outside loops or methods helps to ensure proper lifetime management, 
+avoid redundant subscriptions, improve performance, 
+and enhance the readability and maintainability of the code.
+
+
+Warnings
+
