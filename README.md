@@ -12,4 +12,6 @@ Allow users to select any choice from list will display when start the program:
 
 5- Able to save all tasks in txt file, display all tasks with (description and statu).
 
+6- Able to save all tasks in PDF file, display all tasks with (description and statu).
+
 When need to exit from app press Esc button.
