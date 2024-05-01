@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uEvlxVnclsQ+/e9ZnrxaU0usBATb7naXaJmIf556zXCnfqWr4H6n4gNf1C4wnAu6kfzyjKV/yidi/5psTR2yRQ==",
+  "dgSpecHash": "f/jni6YKWEiXVujEC33QBK7eu98tMk6yxYs99KOkW+WRSfullu0IAoLqFAkrIhlNHYQhPzkARHnfj7HjGr6mIg==",
   "success": true,
   "projectFilePath": "E:\\C#_projects\\task_management_project\\task_management_system\\task_management_system.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\questpdf\\2024.3.2\\questpdf.2024.3.2.nupkg.sha512"
+  ],
   "logs": []
 }

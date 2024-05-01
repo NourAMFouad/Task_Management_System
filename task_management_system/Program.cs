@@ -1,13 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
 using System.ComponentModel;
+using System.Formats.Tar;
 using System.Reflection;
+using System.Reflection.Metadata;
+
+
 
 
 namespace task_management{
 
+
 // delegate declaration 
 public delegate string Inputhandler(); 
+
 
     // to intialize and start program 
     class Program{
@@ -45,7 +51,7 @@ public delegate string Inputhandler();
 
 
                     // display list of choices:
-                    Console.WriteLine("MENU:\n1.Add task\n2.View Task\n3.Mark completed task \n4.Delete Task\n5.Export Tasks to file");
+                    Console.WriteLine("MENU:\n1.Add task\n2.View Task\n3.Mark completed task \n4.Delete Task\n5.Export Tasks to txt file\n6.Export Tasks to pdf file");
 
                     // start to allow user enter number to select choice
                     Console.WriteLine("Enter your choice from list:");
@@ -86,6 +92,13 @@ public delegate string Inputhandler();
                         filename = Console.ReadLine(); 
                         taskmanager.SaveDataInFile(filename);
                             break;
+                        
+                        case 6:
+                        // save tasks as pdf file
+                        // code in your main method
+                        taskmanager.SaveDataInPDFfile();
+                        Console.WriteLine("Go to Tasks.pdf file, to see your tasks.");
+                        break;
                     }
                 }
             }
@@ -111,4 +124,5 @@ public delegate string Inputhandler();
            Menu(start, input);
         }
     }
+
 }

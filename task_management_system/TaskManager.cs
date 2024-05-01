@@ -6,6 +6,14 @@ using System.Runtime.InteropServices;
 //using System.Xml.Serialization;
 // to make us able to working with files 
 using System.IO;
+using System.ComponentModel;
+
+
+using QuestPDF;
+using QuestPDF.Fluent;
+using QuestPDF.Helpers;
+using QuestPDF.Infrastructure;
+using Document = QuestPDF.Fluent.Document;
 
 public delegate void SuccessfullyEventHandler();
 
@@ -109,54 +117,92 @@ public delegate void SuccessfullyEventHandler();
         }
        
 
-public void DeleteTask(string desc)
-{
-    // check if task found in tasks and delelted or not 
-    Task? taskToRemove = null;
+        public void DeleteTask(string desc)
+        {
+            // check if task found in tasks and delelted or not 
+            Task? taskToRemove = null;
 
-    // find task when user enter description 
-    foreach (var task in tasks){
-        // 
-        if (task.Description == desc){
-           taskToRemove = task; 
-           break;
+            // find task when user enter description 
+            foreach (var task in tasks){
+                // 
+                if (task.Description == desc){
+                taskToRemove = task; 
+                break;
+                }
+
+            }
+
+            // check if we find task and delete it 
+            if (taskToRemove != null){
+                tasks.Remove(taskToRemove);
+                Console.WriteLine("Deleted task successfully.");
+            } else{
+                Console.WriteLine($"Not found any task with {desc} name");
+            }
+
         }
 
-    }
+        // save data from list in txt file 
+        public void SaveDataInFile(string filename){
+            // boollean variable to save value true if all data from list saved successfully
+            // and by default is false untill adding values in file. 
+            bool flag = false;
+            
+            // open a file stream for writting
+        using (StreamWriter Writer = new StreamWriter(filename)){
+            
+            // write all values from list in file 
+            foreach (var task in tasks){
+                Writer.WriteLine($"- {task.Description} : {task.Status}");
+                flag = true; 
+            }
 
-    // check if we find task and delete it 
-    if (taskToRemove != null){
-        tasks.Remove(taskToRemove);
-        Console.WriteLine("Deleted task successfully.");
-    } else{
-        Console.WriteLine($"Not found any task with {desc} name");
-    }
+            if (flag){
+                Console.WriteLine("Data Saved successfully");
+            }else{
+                Console.WriteLine("Try agian, something is wrong");
+            }
+        }
 
-}
+        }
 
-// save data from list in txt file 
-public void SaveDataInFile(string filename){
-    // boollean variable to save value true if all data from list saved successfully
-    // and by default is false untill adding values in file. 
-    bool flag = false;
+
+        // function to save data in pdf file 
+        public void SaveDataInPDFfile(){
+            QuestPDF.Settings.License = LicenseType.Community;
     
-    // open a file stream for writting
- using (StreamWriter Writer = new StreamWriter(filename)){
-    
-    // write all values from list in file 
-    foreach (var task in tasks){
-        Writer.WriteLine($"- {task.Description} : {task.Status}");
-        flag = true; 
-    }
+                        Document.Create(container =>
+                        {
+                         // Concatenate all task descriptions into a single string
+                         string allTasks = string.Join("\n", tasks.Select(task => $"- {task.Description} : {task.Status}"));
 
-    if (flag){
-        Console.WriteLine("Data Saved successfully");
-    }else{
-        Console.WriteLine("Try agian, something is wrong");
-    }
- }
+                            container.Page(page =>
+                            {
+                                // foreach (var task in tasks){
+                                page.Size(PageSizes.A4);
+                                page.Margin(2, Unit.Centimetre);
 
-}
+
+                                page.Header()
+                                .Text("Tasks: ")
+                                .SemiBold().FontSize(36).FontColor(Colors.Blue.Medium);
+
+
+                                // iterate over list to write from it all data in page 
+                              
+                                    page.Content()
+                                    .Text(allTasks)
+                                    .FontSize(12);
+                                
+                                // }
+                            });
+                            
+                                
+                        })
+                        .GeneratePdf("Tasks.pdf");
+        }
+
+        
 
     }   // end of TaskManager class
 
