@@ -1,5 +1,5 @@
 # Task Management System 
-## Feature:
+## Features:
 Allow users to select any choice from list will display when start the program:
 
 1- Able to view a list of tasks, so that he/she can see what needs to be done.
@@ -9,5 +9,7 @@ Allow users to select any choice from list will display when start the program:
 3- Able to mark a task as completed or In progress, so that he/she can track them progress.
 
 4- Able to delete a task, so that he/she can remove tasks that are no longer relevant.
+
+5- Able to save all tasks in txt file, display all tasks with (description and statu).
 
 When need to exit from app press Esc button.
